@@ -1,0 +1,103 @@
+body {
+    height: 100vh;
+    background: url("images/background.jpg") no-repeat center / cover;
+    padding: 50px 5%;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+    border:  rgba(255, 255, 255, .2);
+    border-radius: 30px;
+    backdrop-filter: blur(25px);
+    transform: scale(0);
+    animation: zoom-in 1s ease forwards;
+}
+
+@keyframes zoom-in {
+    100% {
+        transform: scale(1);
+    }
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.animation {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slide-in 1s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes slide-in {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-bar a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    border-bottom: 2px solid transparent;
+    transition: .5s;
+}
+
+.nav-bar a:hover, 
+.nav-bar a.current {
+    border-color: white;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 50px;
+    padding: 50px 5% 0;
+    color: white;
+    animation-delay: 1.5s;
+}
+
+.home-detail h1 {
+    font-size: 32px;
+    line-height: 1;
+}
+
+.home-detail h2 {
+    font-size: 55px;
+}
+
+.home-detail p {
+    margin: 10px 0 20px;
+}
+
+.home-img .img-container {
+    position: relative;
+    width: 28vw;
+    height: 28vw;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px white;
+    overflow: hidden;
+}
+
+.home-img .img-container img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
